@@ -1,0 +1,185 @@
+body {
+	background-color: #f8fafc;
+	font-family: "Assistant";
+}
+
+.container {
+	max-width: 900px;
+	padding: 20px;
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	margin: auto;
+}
+
+.slider-wrapper {
+	position: relative;
+	max-width: 300px;
+}
+
+.slider {
+	position: relative;
+	overflow: hidden;
+	width: 300px;
+	height: 300px;
+	border-radius: 10px;
+	background-color: #f1f2f3;
+}
+
+.slides {
+	display: flex;
+	transition: transform 0.5s ease-in-out;
+	width: 300%;
+}
+
+.slides img {
+	width: 300px;
+	height: 300px;
+	object-fit: cover;
+}
+
+.slider-nav {
+	display: flex;
+	column-gap: 10px;
+	justify-content: center;
+	margin-top: 10px;
+}
+
+.slider-nav label {
+	width: 13px;
+	height: 5px;
+	border-radius: 20px;
+	background-color: #932afd;
+	opacity: 0.5;
+	cursor: pointer;
+	transition: opacity 250ms ease;
+	transform: translateY(-25px);
+}
+
+.slider-nav label:hover {
+	opacity: 1;
+}
+
+.sliderimg-nav {
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+	justify-content: space-between;
+	gap: 10px;
+	align-items: center;
+	width: 300px;
+}
+
+.sliderimg-nav label {
+	width: 90px;
+	height: 90px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	background-color: #f1f2f3;
+	margin: 0;
+	text-align: center;
+}
+
+.sliderimg-nav label img {
+	width: 90px;
+	height: 90px;
+	margin: auto;
+	display: block;
+	transform: scale(0.9);
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+#slide1:checked ~ .slider .slides {
+	transform: translateX(0%);
+}
+
+#slide2:checked ~ .slider .slides {
+	transform: translateX(-33.33%);
+}
+
+#slide3:checked ~ .slider .slides {
+	transform: translateX(-66.66%);
+}
+
+#slide1:checked ~ .sliderimg-nav label:nth-child(1),
+#slide2:checked ~ .sliderimg-nav label:nth-child(2),
+#slide3:checked ~ .sliderimg-nav label:nth-child(3) {
+	border: 1px solid black;
+}
+
+#slide1:checked ~ .slider-nav label:nth-child(1),
+#slide2:checked ~ .slider-nav label:nth-child(2),
+#slide3:checked ~ .slider-nav label:nth-child(3) {
+	opacity: 1;
+}
+
+.detail {
+	width: 300px;
+	height: 295px;
+	border: 1px solid black;
+	padding: 0px 20px;
+	border-radius: 10px;
+	font-family: "Rubik";
+	box-sizing: border-box;
+}
+
+.detail h1 {
+	margin: 0;
+	margin-top: 10px;
+	font-size: 20px;
+	color: #932afd;
+}
+
+body {
+	margin: 50px;
+}
+
+.tabs {
+	display: flex;
+	flex-wrap: wrap;
+	font-family: sans-serif;
+	justify-content: center;
+}
+
+.tabs__label {
+	padding: 5px 5px;
+	cursor: pointer;
+	margin: 0;
+	margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.tabs__radio {
+	display: none;
+}
+
+.tabs__content {
+	order: 1;
+	width: 100%;
+	/* border-bottom: 3px solid #dddddd; */
+	line-height: 1.5;
+	font-size: 0.9em;
+	display: none;
+}
+
+.tabs__content ul {
+    margin: 0;
+    padding-left: 0;
+    padding-left: 20px;
+}
+
+
+.tabs__radio:checked + .tabs__label {
+	font-weight: bold;
+	color: #932afd;
+	border-bottom: 2px solid #932afd;
+}
+
+.tabs__radio:checked + .tabs__label + .tabs__content {
+	display: initial;
+}
